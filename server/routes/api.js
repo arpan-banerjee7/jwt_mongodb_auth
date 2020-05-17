@@ -31,6 +31,7 @@ router.get("/", (req, res) => {
 
 //registering a user
 router.post("/register", (req, res) => {
+  //console.log(req);
   let userData = req.body;
   let user = new User(userData);
   user.save((error, registeredUser) => {
@@ -68,69 +69,81 @@ router.get("/events", (req, res) => {
   let events = [
     {
       _id: "1",
-      name: "Puja Banerjee",
-      description: "CTS",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "2",
-      name: "Pralok Kakarla",
-      description: "Accenture",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "3",
-      name: "Ashish Kumar Singh",
-      description: "Infosys",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "4",
-      name: "",
-      description: "",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "5",
-      name: "Harsh Nagelia",
-      description: "Hindustan Unilever",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
+    },
+    {
+      _id: "6",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
   ];
   res.json(events);
 });
 
-router.get("/events", (req, res) => {
+router.get("/special", (req, res) => {
   let events = [
     {
       _id: "1",
-      name: "Puja Banerjee",
-      description: "CTS",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "2",
-      name: "Pralok Kakarla",
-      description: "Accenture",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "3",
-      name: "Ashish Kumar Singh",
-      description: "Infosys",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "4",
-      name: "",
-      description: "",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
     {
       _id: "5",
-      name: "Harsh Nagelia",
-      description: "Hindustan Unilever",
-      date: "2012-04-23T18:45:511z",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
+    },
+    {
+      _id: "6",
+      name: "Auto Expo",
+      description: "lorem ipsum",
+      date: "2012-04-23T18:25:43.511Z",
     },
   ];
   res.json(events);

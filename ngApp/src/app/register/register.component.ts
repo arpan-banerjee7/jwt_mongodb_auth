@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../service/auth.service";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
+  registerUserData = {};
+  constructor(private _auth: AuthService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  registerUser() {
+    //console.log(this.registerUserData);
+    this._auth.registerUser(this.registerUserData).subscribe(
+      (res) => console.log(res),
+      (error) => console.log(error)
+    );
   }
-
 }
