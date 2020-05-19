@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Eventhub</a>
+  <a class="navbar-brand" routerLink="">Eventhub</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -26,13 +26,27 @@
       </li>
     </ul>
     <ul class="navbar-nav">
-      <a class="nav-link" routerLink="/login" routerLinkActive="active"
+      <a
+        class="nav-link"
+        *ngIf="!_authService.loggedIn()"
+        routerLink="/login"
+        routerLinkActive="active"
         >Login</a
       >
-      <a class="nav-link" routerLink="/register" routerLinkActive="active"
+      <a
+        class="nav-link"
+        *ngIf="!_authService.loggedIn()"
+        routerLink="/register"
+        routerLinkActive="active"
         >Register</a
       >
-      <a class="nav-link" style="cursor: pointer;">Logout</a>
+      <a
+        class="nav-link"
+        *ngIf="_authService.loggedIn()"
+        (click)="_authService.logoutUser()"
+        style="cursor: pointer;"
+        >Logout</a
+      >
     </ul>
   </div>
 </nav>
